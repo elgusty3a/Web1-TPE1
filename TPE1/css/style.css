@@ -357,7 +357,7 @@ form> h4 {
 }
 .captcha-area > h1{
 	position: absolute;
-	color: rgba(0, 0, 0, 0.45);
+	color: rgba(0, 0, 0, 0.55);
 	font-size: 3em;
 	letter-spacing: 10px;
 }

@@ -1,17 +1,54 @@
 let form = document.querySelector('#form'); //busca el boton en el DOM
 let capch = document.querySelector('#cap'); //busca en el DOM el titulo donde mostrara el nro aleatorio
 let boton = document.querySelector('#btn');
-let num; //defino la variable de forma global
+// let num; //defino la variable de forma global
 let reset = document.querySelector('#reset'); //boton de reset
 
+//---------------------NUEVOS ALEATORIOS-------------
+let comp = "";
+captcha();
 
-capcha(); //cada vez que recargue la pagina arrojara un nuevo capcha
 
-function capcha(){   //genera un nro de captcha random
-  num = Math.floor(Math.random()*100000+1);
-  capch.innerHTML=(num);
-  console.log(num);
+function captcha() {
+  const CANTCARACTCAPTCH = 6;
+  for (let i = 0; i < CANTCARACTCAPTCH; i++) {
+    // const element = MAXCANTCARACT[i];
+    comp = comp + opcRandom();
+    console.log("comp es: "+comp);
+  }
+  capch.innerHTML = comp;
+}
+
+
+function opcRandom() {
+  let opc, cadena;
+  for (let i = 0; i<3; i++){
+    opc = Math.floor(Math.random()*3+1);
+    console.log("opc es: "+opc)
+    cadena = caracterAleatorio(opc);
+    console.log("cadena es: "+cadena);
+  }
+  return cadena;
+}
+
+
+function caracterAleatorio(opc) {
+  let caracter;
+  switch (opc) {
+    case 1: //digitos aleatorios
+      caracter = String.fromCharCode(Math.floor((Math.random()*(57-48)+1)+48));
+      break;
+    case 2: //letras mayusculas aleatorias
+      caracter = String.fromCharCode(Math.floor((Math.random()*(90-65)+1)+65));
+      break;
+    case 3: //letras minusculas aleatorias
+      caracter = String.fromCharCode(Math.floor((Math.random()*(122-97)+1)+97));
+      break;
+  };
+  console.log("caracter es: "+caracter);
+  return caracter;
 };
+
 
 form.addEventListener("submit",verificarcap); //cuando hay click en boton de enviar apunta a la funcion comparar
 reset.addEventListener("click",resetearCapcha);
@@ -22,7 +59,7 @@ function verificarcap(e){ //funcion de verificacion y comparacion
   let verif = document.querySelector('#verif'); //busca en el DOM la casilla donde el usuario ingresará el nro para verificar
   verif.classList.remove('vaciocapcha');
   boton.classList.remove('vaciocapcha');
-  if ((num == verif.value)){
+  if ((comp === verif.value)){
     boton.value=("CORRECTO!!");
     verif.classList.add('greencapcha');
     boton.classList.add('greencapcha');
@@ -41,5 +78,10 @@ function resetearCapcha() {
   boton.classList.remove('redcapcha');
   verif.classList.add('vaciocapcha');
   boton.classList.add('vaciocapcha');
-  capcha();
+  comp = "";
+  capch.innerHTML = comp;
+  verif.value = comp;
+  captcha();
 };
+
+//----------------------------------------------------
