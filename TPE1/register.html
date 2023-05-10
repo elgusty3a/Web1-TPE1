@@ -46,7 +46,7 @@
 		</div>
 		<div class="ppal">
 			<h1>registrate aquí</h1>
-			<form class="reg" id="form" action="#">
+			<form id="form" action="#">
 				Nombre: <input type="text" value=""/>
 				Apellido: <input type="text" value=""/>
 				Fecha de nacimiento: <input type="date" name="fecha" value=""/>
@@ -56,14 +56,19 @@
 				Localidad: <input type="text" name="localidad" value=""/>
 				Direccion: <input type="text" name="direccion" value=""/>
 				Telefono: <input type="tel" name="telefono" value=""/>
-				<div class="capcha">
-					<h4>Ingrese el numero que se lee debajo para validar el envío</h4>
+				<h4>Ingrese el captcha que se lee debajo para validar el envío</h4>
+				<div class="captcha-area">
+					<img src="img/Background-with-randomly-drawn-lines-and-special-effects-in-Step-9.png" alt="Fondo captcha">
 					<h1 id="cap"></h1>
+				</div>
+				<div class="prueba">
 					Verificacion: <input class="vaciocapcha" id="verif" type="text" value=""/>
 					<input type="submit" class="vaciocapcha" id="btn" value="Enviar"/>
 				</div>
 			</form>
-			<button id="reset"><img src="img/reset.png" alt="imagen como botón"></button>
+			<div class="reset">
+				<button id="reset"><img src="img/reset.png" alt="imagen como botón"></button>
+			</div>
 		</div>
 	</div>
 	<footer>

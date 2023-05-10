@@ -284,44 +284,100 @@ thead{
 form{
 	display: flex;
 	flex-direction: column;
-	width: 350px;
+	width: 60%;
 }
 form > input{
-	margin-top: 5px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	width: 80%;
+	height: 8%;
+	font-size: 15px;
+	border-radius: 5px;
+	padding-left: 10px;
+	background-color: rgb(255, 255, 255);
 }
 
-.reg{
+form > input:empty{
+	background-color:rgb(222, 247, 233);
+	border: 2px solid rgb(105, 148, 105);
+}
+
+form > input:hover{
+	background-color:rgb(255, 255, 255);
+	border: 3px solid rgb(95, 231, 95);
+}
+
+form{
 	border: 1px solid rgb(223, 87, 223);
 	border-radius: 10px;
 	background-color: rgb(218, 186, 218);
-	padding: 20px;
+	padding: 20px 20px 10px 20px;
 	margin-left: 20px;
-	margin-right: 20px;
-	margin-bottom: 0px;
+	margin-right: 20px;;
 	display: flex;
+	align-items: center;
 	justify-content: center;
 }
-
-/*------------capcha de registro------------*/
-
-.capcha {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	text-transform: uppercase;
-}
-
-.capcha > h4 {
+form> h4 {
 	color: rgb(211, 71, 71);
 	border: 3px solid rgb(240, 35, 35);
 	border-radius: 10px;
 	background-color: rgb(255, 255, 255);
 	padding: 3px 0px;
-	width: 100%;
+	width: 60%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-size: 1.5em;
 	text-align: center;
 }
+#verif{
+	height: 40px;
+	width: 50%;
+	border-radius: 5px;
+	text-align: center;
+	margin: 3px;
+	font-size: 1.5em;
+	color: rgb(0, 0, 0);
+}
+.captcha-area{
+	width: 70%;
+	height: 10%;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: burlywood;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.captcha-area > img{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+}
+.captcha-area > h1{
+	position: absolute;
+	color: rgba(0, 0, 0, 0.45);
+	font-size: 3em;
+	letter-spacing: 10px;
+}
+
+/*------------capcha de registro------------*/
+
+.prueba{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.reset {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-transform: uppercase;
+}
+
 .greencapcha {
 	background-color: rgb(54, 182, 54);
 }
@@ -331,21 +387,15 @@ form > input{
 .vaciocapcha{
 	background-color: rgb(255, 255, 255);
 }
-.capcha > input{
-	height: 20px;
-	border-radius: 5px;
-	text-align: center;
-	margin: 3px;
-}
-.capcha > div{
+/* .capcha > div{
 	margin: 5px;
 	display: flex;
 	justify-content: space-between;
-}
+} */
 #reset{
 	border-radius: 50%;
 	padding: 3px;
-	margin-left: 15px;
+	margin-left: 0px;
 }
 #reset>img{
 	width: 30px;
