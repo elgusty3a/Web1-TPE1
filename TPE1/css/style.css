@@ -285,6 +285,14 @@ form{
 	display: flex;
 	flex-direction: column;
 	width: 60%;
+	border: 1px solid rgb(223, 87, 223);
+	border-radius: 10px;
+	background-color: rgb(218, 186, 218);
+	padding: 20px 20px 10px 20px;
+	margin-left: 20px;
+	margin-right: 20px;;
+	align-items: center;
+	justify-content: center;
 }
 form > input{
 	margin-top: 3px;
@@ -294,30 +302,24 @@ form > input{
 	font-size: 15px;
 	border-radius: 5px;
 	padding-left: 10px;
-	background-color: rgb(255, 255, 255);
+	border: none;
 }
 
 form > input:empty{
-	background-color:rgb(222, 247, 233);
-	border: 2px solid rgb(105, 148, 105);
+	background-color:rgb(203, 248, 222);
+	border: 3px solid rgb(105, 148, 105);
 }
 
 form > input:hover{
 	background-color:rgb(255, 255, 255);
 	border: 3px solid rgb(95, 231, 95);
 }
-
-form{
-	border: 1px solid rgb(223, 87, 223);
-	border-radius: 10px;
-	background-color: rgb(218, 186, 218);
-	padding: 20px 20px 10px 20px;
-	margin-left: 20px;
-	margin-right: 20px;;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+form > input:focus{
+	background-color:rgb(192, 223, 243);
+	border: 3px solid rgb(48, 81, 224);
 }
+
+
 form> h4 {
 	color: rgb(211, 71, 71);
 	border: 3px solid rgb(240, 35, 35);
