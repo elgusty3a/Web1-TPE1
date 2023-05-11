@@ -1,3 +1,5 @@
+"use strict";
+
 let form = document.querySelector('#form'); //busca el boton en el DOM
 let capch = document.querySelector('#cap'); //busca en el DOM el titulo donde mostrara el nro aleatorio
 let boton = document.querySelector('#btn');
