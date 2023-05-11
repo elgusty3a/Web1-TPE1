@@ -4,7 +4,8 @@
 }
 
 body{
-	background-color: rgb(52, 75, 56);
+	background-color: rgba(52, 75, 56);
+	background-blend-mode: multiply;
 }
 
 /*-------------------cabecera o header------------------*/
@@ -12,7 +13,12 @@ body{
 header{
 	display: flex;
 	flex-direction: column;
-	background-color: rgb(35, 51, 36);
+	background-image: url(../img/soñar-con-peliculas.jpg);
+	background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	background-blend-mode: multiply;
+	background-color: rgba(35, 51, 36, .9);
 	border-bottom: 3px solid rgb(179, 40, 40);
 }
 .top{
@@ -24,6 +30,7 @@ header{
 	margin-top: 20px;
 	margin-left: 50px;
 }
+
 
 .titulo{
 	margin: 0px;
@@ -71,6 +78,16 @@ header{
 /*-------------cuerpo central de la pagina---------------------*/
 .cuerpo{
 	display: flex;
+	position: relative;
+}
+.cuerpo > img{
+	position: fixed;
+	top: 0px;
+	opacity: 0.095;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
 }
 
 /*---------barra lateral del cuerpo central----------------*/
@@ -161,18 +178,10 @@ header{
 	align-content: center;
 }
 
-.ppal > img{
-	position: absolute;
-	opacity: 0.1;
-	z-index: 1;
-	width: 70%;
-	margin-top: 30%;
-}
-
 .movie{
 	border: 1px solid rgb(12, 173, 92);
 	border-radius: 10px;
-	background-color: rgb(12, 173, 92);
+	background-color: rgba(12, 173, 92, 0.4);
 	padding: 20px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -319,7 +328,6 @@ form > input:focus{
 	border: 3px solid rgb(48, 81, 224);
 }
 
-
 form> h4 {
 	color: rgb(211, 71, 71);
 	border: 3px solid rgb(240, 35, 35);
@@ -332,6 +340,8 @@ form> h4 {
 	font-size: 1.5em;
 	text-align: center;
 }
+
+/*------------capcha de registro------------*/
 #verif{
 	height: 40px;
 	width: 50%;
@@ -364,8 +374,6 @@ form> h4 {
 	letter-spacing: 10px;
 }
 
-/*------------capcha de registro------------*/
-
 .prueba{
 	display: flex;
 	flex-direction: column;
@@ -389,11 +397,7 @@ form> h4 {
 .vaciocapcha{
 	background-color: rgb(255, 255, 255);
 }
-/* .capcha > div{
-	margin: 5px;
-	display: flex;
-	justify-content: space-between;
-} */
+
 #reset{
 	border-radius: 50%;
 	padding: 3px;
