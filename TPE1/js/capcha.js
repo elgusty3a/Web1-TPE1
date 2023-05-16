@@ -14,9 +14,7 @@ captcha();
 function captcha() {
   const CANTCARACTCAPTCH = 6;
   for (let i = 0; i < CANTCARACTCAPTCH; i++) {
-    // const element = MAXCANTCARACT[i];
     comp = comp + opcRandom();
-    console.log("comp es: "+comp);
   }
   capch.innerHTML = comp;
 }
@@ -26,9 +24,7 @@ function opcRandom() {
   let opc, cadena;
   for (let i = 0; i<3; i++){
     opc = Math.floor(Math.random()*3+1);
-    console.log("opc es: "+opc)
     cadena = caracterAleatorio(opc);
-    console.log("cadena es: "+cadena);
   }
   return cadena;
 }
@@ -47,7 +43,6 @@ function caracterAleatorio(opc) {
       caracter = String.fromCharCode(Math.floor((Math.random()*(122-97)+1)+97));
       break;
   };
-  console.log("caracter es: "+caracter);
   return caracter;
 };
 
@@ -57,7 +52,6 @@ reset.addEventListener("click",resetearCapcha);
 
 function verificarcap(e){ //funcion de verificacion y comparacion
   e.preventDefault();
-  console.log("estoy en la consola, hola!!")
   let verif = document.querySelector('#verif'); //busca en el DOM la casilla donde el usuario ingresará el nro para verificar
   verif.classList.remove('vaciocapcha');
   boton.classList.remove('vaciocapcha');
@@ -73,7 +67,6 @@ function verificarcap(e){ //funcion de verificacion y comparacion
 };
 
 function resetearCapcha() {
-  console.log("Estoy reseteando en consola");
   let verif = document.querySelector('#verif');
   boton.value=("Enviar");
   verif.classList.remove('redcapcha');
