@@ -335,7 +335,7 @@ form > input:hover{
 }
 form > input:focus{
 	background-color:rgb(192, 223, 243);
-	border: 3px solid rgb(48, 81, 224);
+	border: 3px solid rgb(48, 81, 224); /* Solo me funciono en Librewolf (navegador basado en firefox) */
 }
 
 form> h4 {
