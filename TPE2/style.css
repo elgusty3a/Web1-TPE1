@@ -6,12 +6,12 @@
 
 body{
   width: 100%;
+  background-color: black;
 }
 
 #main_conteiner{
   height: 30%;
-  background-color: rgba(32, 58, 32, 0.76);
-  border: 1px solid black;
+  background-color: rgb(106, 139, 106);
   display: flex;
   width: 85%;
   max-width: 660px;
@@ -26,18 +26,14 @@ nav{
 }
 nav a{
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 1.5em;
 }
-nav ul{
+nav ul, nav li{
   list-style: none;
+  margin: 0.5em;
 }
-
-nav>header{
-  padding: 0.5em;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nav-cabeza-mob>header{
   background-color: rgba(255, 255, 255, 0.6);
   background-image: url(img/soñar-con-peliculas.jpg);
   background-size: cover;
@@ -45,13 +41,28 @@ nav>header{
   background-repeat: no-repeat;
   background-blend-mode:color-burn;
   border-bottom: 3px solid rgb(179, 40, 40);
+  border-top: 3px solid rgb(179, 40, 40);
+}
+
+nav>.nav-cabeza-mob>header{
+  padding: 0.5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   /* text-align: center; */
 }
 .logo-page{
   width: 80%;
   margin: 0em 1em;
 }
+.btn-menu-mob.cont{
+  /* display: flex; */
+  align-items: start;
+}
 .links-mob-menu{
+  padding: 2em;
+  /*display: none;*/
 }
 
 
@@ -63,11 +74,16 @@ nav>header{
 }
 
 #btn-mob-menu > .hamburguer-btn > img{
+  margin: 5px;
   width: 2.25em;
   height: 2.25em;
 }
 #user-icon>img{
   width: 2.25em;
+}
+.social-mob{
+  display: flex;
+  flex-direction: column;
 }
 .social-mob-icon>img{
   width: 1.5em;
