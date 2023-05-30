@@ -6,6 +6,7 @@
 body{
 	background-color: rgba(52, 75, 56);
 	background-blend-mode: multiply;
+	font-size: 16px;
 }
 
 /*-------------------cabecera o header------------------*/
@@ -27,25 +28,26 @@ header{
 	align-items: center; /* ordena vertical */
 }
 .logo{
-	margin-top: 20px;
-	margin-left: 50px;
+	margin-top: 1.25em;
+	margin-left: 3.125px;
 }
 
 
 .titulo{
 	margin: 0px;
 	text-transform: uppercase;
-	font-size: 200%;
+	text-align: center;
+	font-size: 1.75em;
 	color: aquamarine;
 }
 
 .social{
-	margin-right: 20px;
+	margin-right: 1.25em;
 	display: flex;
 	flex-direction: column;
 }
 .img-social{
-	height: 50px;
+	width: 100%;
 }
 
 /*-------------barra de navegacion de header-------------------*/
@@ -57,10 +59,10 @@ header{
 .ul-nav{
 	flex-wrap: wrap;
 	margin-bottom: 5px;
-	margin-left: 20px;
+	margin-left: 1.25rem;
 	display: flex; /* pone los elemento en fila */
 	list-style: none; /* saca los puntos de la lista */
-	font-size: 23px;
+	font-size: 1.44rem;
 	text-transform: uppercase;
 }
 .ul-nav li>a{
@@ -92,7 +94,7 @@ header{
 
 /*---------barra lateral del cuerpo central----------------*/
 .barra-lat{
-	font-size: 100%;
+	font-size: 1em;
 	margin-left: 20px;
 	padding: 20px;
 	margin-top: 20px;
@@ -103,6 +105,7 @@ header{
 	background-color: rgba(38, 46, 25, 0.288);
 	color: beige;
 	list-style: none;
+	display: none;
 }
 .barra-lat > a img {
 	width: 20%;
@@ -121,7 +124,7 @@ header{
 	position: absolute;
 	opacity: 0.3;
 	z-index: -1;
-	width: 150px;
+	width: 20%;
 }
 .menu-lat li>a:hover{
 	color: rgb(36, 236, 18);
@@ -198,7 +201,7 @@ header{
 .sinop-parr{
 	color: rgb(236, 214, 116);
 	/* color: rgb(15, 63, 63); */
-	font-size: 20px;
+	font-size: 1.25rem;
 	text-align: justify;
 	margin-left: 15px;
 	width: 40%;
@@ -227,7 +230,7 @@ header{
 	color: rgb(15, 63, 63);
 }
 .sinop-parr > p::first-letter {
-	font-size: 200%
+	font-size: 2rem;
 }
 .parr-der{
 	width: 30%;
