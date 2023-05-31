@@ -9,17 +9,14 @@ body{
   background-color: black;
 }
 
-#main_conteiner{
-  height: 30%;
+
+nav{
   background-color: rgb(106, 139, 106);
   display: flex;
   width: 85%;
   max-width: 660px;
-  height: 100%;
   border-radius: 0px 0px 20px 0px;
-}
-nav{
-  width: 100%;
+  width: 85%;
   /* transition: transform .5s; */
   display: flex;
   flex-direction: column;
@@ -28,23 +25,22 @@ nav a{
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 1.5em;
+  text-transform: uppercase;
+  display: block;
 }
 nav ul, nav li{
   list-style: none;
   margin: 0.5em;
 }
 .nav-cabeza-mob>header{
-  background-color: rgba(255, 255, 255, 0.6);
-  background-image: url(img/soñar-con-peliculas.jpg);
+  background-image: url(../img/soñar-con-peliculas.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-blend-mode:color-burn;
+  background-color: rgba(255, 255, 255, 0.6);
   border-bottom: 3px solid rgb(179, 40, 40);
   border-top: 3px solid rgb(179, 40, 40);
-}
-
-nav>.nav-cabeza-mob>header{
   padding: 0.5em;
   width: 100%;
   display: flex;
@@ -56,17 +52,16 @@ nav>.nav-cabeza-mob>header{
   width: 80%;
   margin: 0em 1em;
 }
-.btn-menu-mob.cont{
-  /* display: flex; */
-  align-items: start;
+.btn-menu-mob-cont{
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
 }
 .links-mob-menu{
   padding: 2em;
   /*display: none;*/
 }
-
-
-
 
 #btn-mob-menu{
   border-style: none;
@@ -74,6 +69,8 @@ nav>.nav-cabeza-mob>header{
 }
 
 #btn-mob-menu > .hamburguer-btn > img{
+  position: absolute;
+  top: 2px;
   margin: 5px;
   width: 2.25em;
   height: 2.25em;
@@ -83,15 +80,15 @@ nav>.nav-cabeza-mob>header{
 }
 .social-mob{
   display: flex;
-  flex-direction: column;
 }
 .social-mob-icon>img{
   width: 1.5em;
   height: 1.5em;
 }
 .arrow-menu-mob{
-  width: 0.5em;
-  height: 0.5em;
+  margin-left: auto;
+  width: 0.9em;
+  /* height: 1em; */
 }
 
 
