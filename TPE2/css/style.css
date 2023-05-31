@@ -6,12 +6,17 @@
 
 body{
   width: 100%;
-  background-color: black;
+  background-image: url(../img/antigua-máquina-de-cine.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode:color-burn;
+  background-color: rgba(0, 0, 0, 0.733);
 }
 
 
 nav{
-  background-color: rgb(106, 139, 106);
+  background-color: rgba(106, 139, 106, 0.76);
   display: flex;
   width: 85%;
   max-width: 660px;
@@ -21,6 +26,9 @@ nav{
   display: flex;
   flex-direction: column;
 }
+
+
+
 nav a{
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -59,7 +67,7 @@ nav ul, nav li{
   justify-content: space-between;
 }
 .links-mob-menu{
-  padding: 2em;
+  padding: 0em 2em;
   /*display: none;*/
 }
 
@@ -85,11 +93,18 @@ nav ul, nav li{
   width: 1.5em;
   height: 1.5em;
 }
+.link-item{
+  position: relative;
+  margin: 15px 0px;
+}
 .arrow-menu-mob{
+  position: absolute;
+  right: 0.1em;
   margin-left: auto;
   width: 0.9em;
   /* height: 1em; */
 }
+
 
 
 @media screen {
