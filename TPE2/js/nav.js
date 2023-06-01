@@ -23,30 +23,32 @@ let imgActual = 0;
 
 //setear tiempo
 let tempo;
-tempo = setInterval(pasarImagen, 2000);
-document.querySelector('#btn-sig').addEventListener("click" , pasarImagen);
+// tempo = setInterval(pasarImagen, 2000);
+document.querySelector('#btn-sig').addEventListener("click" , ()=>pasarImagen(1));
 document.querySelector('#btn-ant').addEventListener("click" , pasarImagen);
-let contImgSlide = document.querySelector('.img-slide');
-contImgSlide.addEventListener("mouseover", detenerSlide);
-contImgSlide.addEventListener("mouseout", arrancarSlide);
+let contImgSlide = document.querySelector('#img-slide');
+// contImgSlide.addEventListener("mouseover", detenerSlide);
+// contImgSlide.addEventListener("mouseout", arrancarSlide);
 
-function pasarImagen() {
-  let boton= this.id;
-  if(boton!=undefined){
-    clearInterval(pasarImagen,2000);
-    tempo = setInterval(pasarImagen, 2000);
-  }
-  if (boton=='btn-sig') {
-    imgActual++;
-    if(imgActual==arregloImg.length()){
-      imgActual = 0;
-    }
-  } else {
-    imgActual--;
-    if (imgActual<0) {
-      imgActual=arregloImg.length()-1;
-    }
-  }
-  let showImg = arregloImg[imgActual];
-  contImgSlide.scr = `img/${showImg}`;
+function pasarImagen(n) {
+  // let boton= this.id;
+  imgActual+=n;
+  imgActual=imgActual%3+1;
+  let nombreImg = "img/img"+imgActual+".jpg";
+  console.log(nombreImg);
+  contImgSlide.style = "background: url("+nombreImg+");";
+
+  // if (boton=='btn-sig') {
+  //   imgActual++;
+  //   if(imgActual==arregloImg.length()){
+  //     imgActual = 0;
+  //   }
+  // } else {
+  //   imgActual--;
+  //   if (imgActual<0) {
+  //     imgActual=arregloImg.length()-1;
+  //   }
+  // }
+  // let showImg = arregloImg[imgActual];
+  // contImgSlide.scr = `img/${showImg}`;
 }
