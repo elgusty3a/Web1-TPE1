@@ -10,18 +10,19 @@
 </head>
 <body>
   <header class="hero">
-    <nav class="nav conteiner-header" id="nav">
+    <nav class="nav" id="nav">
       <div class="logo-user">
-        <a href="register.html"><img src="img/user-circle-svgrepo-com.svg" alt=""></a>
+        <a href="register.html"><img src="img/user-circle-svgrepo-com32.svg" alt=""></a>
       </div>
       <div class="logo">
         <img src="img/Logo-cinemaParadiso.png" alt="">
         <h4>"Frase de cine"</h4>
       </div>
-      <ul class="nav-links">
-        <div class="logo-menu-mob">
+      <ul class="nav-links" id="nav-links">
+        <!-- <div class="logo-menu-mob">
           <img src="img/LogoWhite-cinemaParadiso.png" alt="">
-        </div>
+        </div> -->
+        <button class="btn-cross" id="btn-cross"><img class="open-close" src="img/close-icon.svg" alt="cerrar menu mobile"></button>
         <hr>
         <li class="item-nav"><a class="navLink" href="#">Algo va</a></li>
         <hr>
@@ -33,8 +34,7 @@
         <hr>
         <li class="item-nav"><a class="navLink" href="#">Algo va</a></li>
       </ul>
-      <a href="#nav" class="btn-hambur"><img class="open-close" src="img/menu-1-svgrepo-com.svg" alt=""></a>
-      <a href="#" class="btn-cross"><img class="open-close" src="img/times-svgrepo-com.svg" alt=""></a>
+      <button class="btn-hambur" id="btn-hambur"><img class="open-close" src="img/hamburger-icon.svg" alt="abrir menu mobile"></button>
     </nav>
   </header>
   <section class="sectionGrid">
@@ -51,6 +51,6 @@
       <h1>pie de pagina</h1>
     </footer>
   </section>
-  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>
