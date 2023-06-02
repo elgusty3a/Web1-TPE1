@@ -1,11 +1,13 @@
 :root {
-  --theme-color: white;
+  --theme-color: rgb(9, 12, 9);
   --primary-color: #124f88;
   --secundary-color: #F7C331;
   --text-color-inverse: white;
   --text-color: black;
-  --navbar-shallow-color: #e5e5e5;
+  --navbar-background-color-hero: rgb(31, 51, 39);
+  --navbar-shallow-color: #b83434;
   --menu-mobile-background-color: #3A4460;
+  --theme-cards: teal;
 }
 
 body {
@@ -151,20 +153,26 @@ li{
 
 .hero{
   text-align: center;
-  background-color: rgb(93, 141, 92);
+  background-color: var(--navbar-background-color-hero);
   grid-area: header;
+  z-index: 10;
 }
+
+
+/*
+! ------------PARA EL SLIDER EN MOVIL-------------------
+*/
 .slide-conteiner{
   text-align: center;
+  width: 100%;
+  display: flex;
   /* background-color: cyan; */
   grid-area: slide;
 }
-/*
-! PARA EL SLIDER EN MOVIL
-*/
+
 .slide{
   overflow: hidden;
-  height: 40vh;
+  height: 45vh;
   width: 100%;
   margin: 10px 10px;
   background-image: url(../img/img0.jpg);
@@ -195,30 +203,97 @@ li{
 #btn-sig>img{
   rotate: -90deg;
 }
-.slide-conteiner button>img{
-  width: 50px;
-}
-.slide-conteiner{
-  width: 100%;
-  display: flex;
-}
 .img-slide{
   width: 100%;
 }
+
 /*
-! FIN DEL SLIDER EN MOVIL
+! ----------FIN DEL SLIDER EN MOVIL----------------------
 */
 
+
+
+
+
+/*
+?  ---------INICIO DEL AREA CARDS EN MOVIL-----------------------
+*/
+
+.portada-img{
+  grid-area: portada;
+  border-radius: 20px;
+  padding: 10px 0px;
+  width: 80%;
+  margin: auto;
+}
+.parr-der{
+  grid-area: listaMovie;
+  color: var(--text-color-inverse);
+  padding: 10px 10px 0 0;
+  font-size: 0.8em;
+  text-align: left;
+}
+.parr-der>ul li{
+  padding-bottom: 10px;
+}
+.sinop-parr>button{
+  background-color: rgb(231, 81, 81);
+  border-radius: 40px;
+  border: 2px solid wheat;
+  width: max-content;
+  margin: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: wheat;
+  padding: 5px;
+  text-transform: uppercase;
+}
+.ver_menos{
+  display: none;
+}
+
+.sinop-parr{
+  grid-area: sinopsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  padding: 0px 20px 20px 20px;
+  color: var(--text-color-inverse);
+}
+.movie{
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 2px rgba(34, 86, 110, 0.9);
+  grid-area: movie;
+  display: grid;
+  gap: 10px;
+  background-color: var(--theme-cards);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:"portada listaMovie"
+                      "sinopsis sinopsis";
+}
 .cards-conteiner{
   text-align: center;
-  background-color: teal;
   grid-area: cards;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: "movie";
 }
+
+
+/*
+? --------FIN DEL AREA CARDS EN MOVIL---------------------
+*/
+
+
 .sidebar{
   text-align: center;
   border: 1px solid blue;
   background-color: coral;
   grid-area: sidebar;
+  border-radius: 10px;
 }
 .pie-pag{
   text-align: center;
@@ -227,12 +302,13 @@ li{
   grid-area: footer;
 }
 .sectionGrid{
-  width: 97%;
+  width: 90%;
+  margin: auto;
   margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:"header header header header"
+  grid-template-areas:
                       "slide slide slide slide"
                       "cards cards cards cards"
                       "sidebar sidebar sidebar sidebar"
@@ -258,23 +334,31 @@ li{
 
 @media (min-width:480px) {
   /*--cambio grid--*/
-
+  .portada-img{
+    min-width: 160px;
+  }
+  .movie{
+    margin-bottom: 15px;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-areas:"portada listaMovie"
+                        "sinopsis sinopsis";
+  }
   .sectionGrid{
     width: 97%;
     margin: auto;
     margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
     display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:"header header header header"
-                        "slide slide slide slide"
-                        "cards cards cards sidebar"
-                        "footer footer footer footer";
+    gap: 15px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+                        "slide slide"
+                        "cards sidebar"
+                        "footer footer";
   }
 
 }
 
-
+/*------------------------------------------------*/
 
 @media (min-width:768px){
 
@@ -286,6 +370,7 @@ li{
   }
 
   .nav-links {
+    color: var(--text-color-inverse);
     margin: 0 50px;
     padding: 0 ;
     display: flex;
@@ -301,7 +386,7 @@ li{
   }
 
   .navLink {
-    color: var(--text-color);
+    color: var(--text-color-inverse);
     line-height: 50px;
     font-size: 1em;
   }
@@ -318,12 +403,25 @@ li{
 
   /* para mostrar cuarpo del grid por debajo del header fixed */
   .sectionGrid{
-    margin-top: 132px;
+    margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
+    grid-template-columns: repeat(12 1fr);
+    grid-template-areas:"slide"
+                        "";
   }
 
-  
-  /* .open-menu:focus:not(:focus-visible),
-  .close-menu:focus:not(:focus-visible) {
-    outline: none;
-  } */
+  .movie {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:"portada listaMovie"
+                        "sinopsis sinopsis";
+  }
+
+  .portada-img{
+    max-width: 200px;
+    grid-row: span 2;
+  }
+  .parr-der>ul li{
+    padding-bottom: 15px;
+  }
+
+
 }

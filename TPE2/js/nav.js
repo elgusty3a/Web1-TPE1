@@ -16,7 +16,9 @@ closeMenuBtn.addEventListener("click", mostrarMenu);
 
 
 
-/* ---- comienxo del slide ----*/
+/*
+! ---- comienzo del slide --------------------
+*/
 
 let arregloImg = ["img0.jpg","img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg","img6.jpg"];
 let imgActual = 0;
@@ -44,10 +46,10 @@ function pasarImagen() {
       imgActual = 0;
     }
   } else {
-    imgActual--;
-    if (imgActual<0) {
-      imgActual=arregloImg.length-1;
-    }
+      imgActual--;
+      if (imgActual<0) {
+        imgActual=arregloImg.length-1;
+      }
     }
   let showImage = arregloImg[imgActual];
   //console.log(imgActual);
@@ -62,3 +64,33 @@ function detenerSlide() {
 function arrancarSlide() {
   tempo = setInterval(pasarImagen, 5000);
 }
+
+/*
+! ---------- FIN del slide ------------------------------
+*/
+
+
+
+
+/*
+? -------- comienzo del JS para botones "ver mas"  -----------------
+*/
+
+let btnVerMas=document.querySelectorAll(".btn-vermas");
+
+for (let i = 0; i < btnVerMas.length; i++) {
+  btnVerMas[i].addEventListener("click", function(e){
+    let verParrafo = this.nextElementSibling;
+    verParrafo.classList.toggle("ver_menos");
+    if (verParrafo.classList.contains("ver_menos")){
+      this.innerHTML="ver mas";
+    } else {
+      this.innerHTML="ver menos";
+    };
+  });
+}
+
+
+/*
+? -------- FIN del JS para botones "ver mas"  -----------------
+*/
