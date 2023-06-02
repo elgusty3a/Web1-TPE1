@@ -220,14 +220,14 @@ li{
 */
 
 .portada-img{
-  grid-area: portada;
+  /* grid-area: portada; */
   border-radius: 20px;
   padding: 10px 0px;
   width: 80%;
   margin: auto;
 }
 .parr-der{
-  grid-area: listaMovie;
+  /* grid-area: listaMovie; */
   color: var(--text-color-inverse);
   padding: 10px 10px 0 0;
   font-size: 0.8em;
@@ -253,7 +253,7 @@ li{
 }
 
 .sinop-parr{
-  grid-area: sinopsis;
+  /* grid-area: sinopsis; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -265,21 +265,23 @@ li{
   margin-bottom: 10px;
   border-radius: 10px;
   box-shadow: 3px 3px 5px 2px rgba(34, 86, 110, 0.9);
-  grid-area: movie;
-  display: grid;
   gap: 10px;
   background-color: var(--theme-cards);
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
+  grid-area: movie;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:"portada listaMovie"
-                      "sinopsis sinopsis";
+                      "sinopsis sinopsis"; */
 }
 .cards-conteiner{
   text-align: center;
   grid-area: cards;
-  display: grid;
+  /*display: grid;
   gap: 10px;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-areas: "movie";
+  grid-template-areas: "movie"; */
 }
 
 
@@ -307,12 +309,12 @@ li{
   margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-areas:
-                      "slide slide slide slide"
-                      "cards cards cards cards"
-                      "sidebar sidebar sidebar sidebar"
-                      "footer footer footer footer";
+                      "slide slide slide slide slide slide slide slide slide slide slide slide"
+                      "cards cards cards cards cards cards cards cards cards cards cards cards"
+                      "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar"
+                      "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 
@@ -337,11 +339,14 @@ li{
   .portada-img{
     min-width: 160px;
   }
+  .parr-der{
+    padding-top: 40px;
+  }
   .movie{
     margin-bottom: 15px;
-    grid-template-columns: 1.2fr 0.8fr;
+    /* grid-template-columns: 1.2fr 0.8fr;
     grid-template-areas:"portada listaMovie"
-                        "sinopsis sinopsis";
+                        "sinopsis sinopsis"; */
   }
   .sectionGrid{
     width: 97%;
@@ -349,11 +354,11 @@ li{
     margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
     display: grid;
     gap: 15px;
-    grid-template-columns: 3fr 1fr;
     grid-template-areas:
-                        "slide slide"
-                        "cards sidebar"
-                        "footer footer";
+    "slide slide slide slide slide slide slide slide slide slide slide slide"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    /* "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar" */
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
   }
 
 }
@@ -404,16 +409,24 @@ li{
   /* para mostrar cuarpo del grid por debajo del header fixed */
   .sectionGrid{
     margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
-    grid-template-columns: repeat(12 1fr);
-    grid-template-areas:"slide"
-                        "";
+    grid-template-rows: repeat(8, 45vh 1fr 1fr 1fr 1fr 1fr 1fr auto);
+    grid-template-areas:
+    "slide slide slide slide slide slide slide slide slide slide slide slide"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    /* "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar" */
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
   }
 
-  .movie {
+  /* .movie {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:"portada listaMovie"
                         "sinopsis sinopsis";
-  }
+  } */
 
   .portada-img{
     max-width: 200px;
