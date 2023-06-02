@@ -167,10 +167,16 @@ li{
   height: 40vh;
   width: 100%;
   margin: 10px 10px;
-  overflow: hidden;
-  background: url(../img/img0.jpg);
+  background-image: url(../img/img0.jpg);
+  background-image: no-repeat;
+  background-image: fixed;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   transition: 0.5s;
-  border: 3px solid black;
+  border: 5px solid rgb(207, 67, 67);
   border-radius: 10px;
 }
 .slide-conteiner button{
