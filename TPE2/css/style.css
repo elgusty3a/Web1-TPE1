@@ -156,7 +156,7 @@ li{
 }
 .slide-conteiner{
   text-align: center;
-  background-color: cyan;
+  /* background-color: cyan; */
   grid-area: slide;
 }
 /*
@@ -168,19 +168,25 @@ li{
   width: 100%;
   margin: 10px 10px;
   overflow: hidden;
+  background: url(../img/img0.jpg);
+  transition: 0.5s;
+  border: 3px solid black;
+  border-radius: 10px;
 }
 .slide-conteiner button{
-  background: none;
+  background: var(--theme-color);
   border: none;
   cursor: pointer;
-  width: 10px;
+  width: 20px;
+}
+#btn-sig>img,
+#btn-ant>img{
+  width: 20px;
 }
 #btn-ant>img{
-  width: 10px;
   rotate: 90deg;
 }
 #btn-sig>img{
-  width: 10px;
   rotate: -90deg;
 }
 .slide-conteiner button>img{
@@ -215,6 +221,7 @@ li{
   grid-area: footer;
 }
 .sectionGrid{
+  width: 97%;
   margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
   display: grid;
   gap: 10px;
@@ -247,7 +254,7 @@ li{
   /*--cambio grid--*/
 
   .sectionGrid{
-    width: 90%;
+    width: 97%;
     margin: auto;
     margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
     display: grid;
@@ -269,7 +276,7 @@ li{
 
   .nav{
     align-items: center;
-    max-width: 90%;
+    max-width: 98%;
   }
 
   .nav-links {
@@ -300,12 +307,12 @@ li{
   .logo img{
     margin:  0 50px;
     transition: 0.5s;
-    width: 300px;
+    width: 200px;
   }
 
   /* para mostrar cuarpo del grid por debajo del header fixed */
   .sectionGrid{
-    margin-top: 178.83px;
+    margin-top: 132px;
   }
 
   
