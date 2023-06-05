@@ -6,7 +6,7 @@
   --text-color: black;
   --navbar-background-color-hero: rgb(31, 51, 39);
   --navbar-shallow-color: #b83434;
-  --menu-mobile-background-color: #3A4460;
+  --menu-mobile-background-color: #b83434;/*#3A4460;*/
   --theme-cards: teal;
 }
 
@@ -28,22 +28,16 @@ a {
 li{
   list-style: none;
 }
-/* html{
-  height: 100%;
-}
-body{
-  min-height: 100%;
-} */
 
 /*-------------inicio del header y nav mobile--------------*/
 
 .hero {
-  box-shadow: 0 4px 5px var(--navbar-shallow-color);
   position: fixed;
-  background-color: var(--theme-color);
   left: 0;
   top: 0;
   width: 100%;
+  background-color: var(--theme-color);
+  box-shadow: 0 4px 5px var(--navbar-shallow-color);
 }
 
 .nav {
@@ -59,7 +53,7 @@ body{
   margin: auto;
 }
 .logo-user img{
-  width:  50px;
+  width:  30px;
 }
 .logo {
   display: flex;
@@ -73,21 +67,21 @@ body{
 
 .logo img {
   border-radius: 40%;
-  width: 200px;
+  width: 100px;
 }
 
 /* Menu */
 .nav-links {
   display: flex;
   flex-direction: column;
-  list-style: none;
+  /* list-style: none; */
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
+  height: 100%;
   align-items: center;
   background-color: var(--menu-mobile-background-color);
-  height: 100%;
   overflow-y: auto;
   transition: opacity 0.3s;
   visibility: hidden;
@@ -153,7 +147,6 @@ body{
 
 .hero{
   text-align: center;
-  /* background-color: var(--navbar-background-color-hero); */
   grid-area: header;
   z-index: 10;
   background-image: url(../img/soñar-con-peliculas.jpg);
@@ -187,9 +180,9 @@ body > img{
 
 .slide{
   overflow: hidden;
-  height: 40vh;
+  height: 20vh;
   width: 100%;
-  margin: 10px 10px;
+  margin: 5px 5px;
   background-image: url(../img/img0.jpg);
   background-image: no-repeat;
   background-image: fixed;
@@ -206,11 +199,11 @@ body > img{
   background: transparent;
   border: none;
   cursor: pointer;
-  width: 20px;
+  width: 10px;
 }
 #btn-sig>img,
 #btn-ant>img{
-  width: 20px;
+  width: 10px;
 }
 #btn-ant>img{
   rotate: 90deg;
@@ -233,17 +226,54 @@ body > img{
 /*
 ?  ---------INICIO DEL AREA CARDS EN MOVIL-----------------------
 */
+
+.cards-conteiner{
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  grid-area: cards;
+  /*display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: "movie"; */
+}
+.movie{
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 150px;
+  height: 300px;
+  /* box-shadow: 3px 3px 5px 2px rgba(34, 86, 110, 0.9); */
+  background-color: var(--theme-cards);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  position: relative;
+  /* display: grid;
+  grid-area: movie;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:"portada listaMovie"
+  "sinopsis sinopsis"; */
+}
+
 .poster{
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 150px;
-  max-height: 200px;
+  width: 100px;
+  height: 150px;
   overflow: hidden;
   border-radius: 20px;
+  position: absolute;
+  top: 0%;
+  left: 17%;
+  z-index: 1;
 }
-.portada-img{
+.poster >img{
   border-radius: 20px;
   padding: 10px 0px;
   width: 100%;
@@ -252,65 +282,95 @@ body > img{
   object-fit: cover;
 }
 .parr-der{
+  position: absolute;
+  top: 62%;
   grid-area: listaMovie;
   color: var(--text-color-inverse);
-  padding: 0px 10px 0 0;
-  font-size: 0.8em;
+  padding: 10px 10px 10px 0;
+  font-size: 0.5em;
   text-align: left;
+  margin-bottom: 10px;
+}
+.parr-der ul {
+  overflow-y: scroll;
+  height: 90px;
+}
+.parr-der ul::-webkit-scrollbar{
+  width: 4px;
+  border-radius: 5px;
+  background-color: rgba(48, 102, 102, 0.82);
+}
+.parr-der ul::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: var(--navbar-shallow-color);
 }
 .parr-der>ul li{
-  padding: 0 0 10px 15px;
+  padding: 0 0 8px 20%;
 }
 .sinop-parr>button{
   background-color: rgb(231, 81, 81);
   border-radius: 40px;
   border: 2px solid wheat;
   width: max-content;
-  margin: auto;
-  margin-bottom: 10px;
+  /* margin: 10px auto; */
   cursor: pointer;
   color: wheat;
   padding: 5px;
   text-transform: uppercase;
+  position: absolute;
+  left: 30%;
+  width: 40%;
+  bottom: 38%;
+
+}
+.sinop-parr>button:hover{
+  opacity: 0.8;
+  transition:  opacity .5s;
+}
+
+.btn-vermas{
+  font-size: 8px;
 }
 .ver_menos{
   display: none;
 }
-
+.ver_contenido{
+  display: block;
+  z-index: 2;
+  color: var(--text-color);
+  background-color: var(--text-color-inverse);
+  transition: opacity 0.5s;
+  padding: 5px;
+  border-radius: 10px;
+  height: 240px;
+  overflow-y: scroll;
+}
 .sinop-parr{
   grid-area: sinopsis;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: justify;
-  padding: 0px 20px 5px 20px;
+  align-items: center;
+  width: 90%;
+  margin-left: 5%;
+  height: auto;
+  padding: 5px 5px 0px 5px;
   color: var(--text-color-inverse);
+  font-size: 0.8rem;
+
 }
-.movie{
-  margin-bottom: 10px;
-  border-radius: 10px;
-  /* box-shadow: 3px 3px 5px 2px rgba(34, 86, 110, 0.9); */
-  gap: 10px;
-  background-color: var(--theme-cards);
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  /* display: grid;
-  grid-area: movie;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:"portada listaMovie"
-                      "sinopsis sinopsis"; */
+.sinop-parr>p{
+  font-size: .8em;
 }
-.cards-conteiner{
-  text-align: center;
-  grid-area: cards;
-  /*display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-areas: "movie"; */
+.sinop-parr::-webkit-scrollbar{
+  width: 4px;
+  border-radius: 5px;
+  background-color: rgba(48, 102, 102, 0.82);
 }
-.ppal{
-  display: unset;
+.sinop-parr::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: var(--navbar-shallow-color);
 }
 
 
@@ -327,23 +387,25 @@ body > img{
   border-radius: 10px;
 }
 .pie-pag{
+  width: 100%;
   text-align: center;
+  justify-content: center;
   border: 1px solid rgb(211, 89, 32);
   background-color: rgb(80, 176, 255);
   grid-area: footer;
 }
 .sectionGrid{
-  width: 80%;
+  width: 100%;
   margin: auto;
-  margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
-  display: grid;
+  margin-top: 100px; /* para mostrar cuarpo del grid por debajo del header fixed */
   gap: 10px;
-  grid-template-columns: repeat(12, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(1, 1fr);
   grid-template-areas:
                       "slide slide slide slide slide slide slide slide slide slide slide slide"
                       "cards cards cards cards cards cards cards cards cards cards cards cards"
                       "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar"
-                      "footer footer footer footer footer footer footer footer footer footer footer footer";
+                      "footer footer footer footer footer footer footer footer footer footer footer footer"; */
 }
 
 
@@ -363,38 +425,75 @@ body > img{
 
 
 
-@media (min-width:480px) {
+@media only screen and (min-width:480px) {
   /*--cambio grid--*/
+  .logo img {
+    border-radius: 40%;
+    width: 150px;
+  }
+  .slide{
+    height: 40vh;
+    margin: 0 20px;
+  }
   .poster{
     display: flex;
     justify-content: center;
     max-width: 150px;
   }
-  /* .portada-img{
-    min-width: 160px;
-  } */
-  .ppal{
+  .portada-img{
+  max-width: 150px;
+  }
+  .cards-conteiner{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
   .movie{
+    margin: 0 10px;
     margin-bottom: 15px;
-    /* grid-template-columns: 1.2fr 0.8fr;
-    grid-template-areas:"portada listaMovie"
-                        "sinopsis sinopsis"; */
+    min-width: 100px;
+    max-width: 200px;
   }
+  .sinop-parr>p{
+    margin: auto;
+    font-size: .8em;
+  }
+  .parr-der{
+    margin-top: 0px;
+  }
+  .parr-der>ul{
+    top: 10px;
+  }
+  .parr-der>ul li{
+    margin: auto;
+    font-size: .6rem;
+    padding: 0 0 8px 10%;
+  }
+  .sinop-parr>p::-webkit-scrollbar{
+    width: 4px;
+    border-radius: 5px;
+    background-color: rgba(48, 102, 102, 0.82);
+  }
+  .sinop-parr>p::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: var(--navbar-shallow-color);
+  }
+  
   .sectionGrid{
     width: 97%;
     margin: auto;
-    margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
+    margin-top: 125px; /* para mostrar cuarpo del grid por debajo del header fixed */
     display: grid;
-    gap: 15px;
+    gap: 10px;
+    grid-template-columns: (12 1fr);
     grid-template-areas:
+    "header header header header header header header header header header header header "
     "slide slide slide slide slide slide slide slide slide slide slide slide"
     "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
-    /* "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar" */
     "footer footer footer footer footer footer footer footer footer footer footer footer";
+  }
+  .pie-pag{
+    margin-right: auto;
   }
 
 }
@@ -440,12 +539,29 @@ body > img{
   .logo img{
     margin:  0 50px;
     transition: 0.5s;
-    width: 200px;
   }
 
 
+  /* para mostrar cuarpo del grid por debajo del header fixed */
+  .sectionGrid{
+    margin-top: 115px; /* para mostrar cuarpo del grid por debajo del header fixed */
+    /* grid-template-columns: (12 1fr);
+    grid-template-areas:
+    "header header header header header header header header header header header header "
+    "slide slide slide slide slide slide slide slide slide slide slide slide"
+    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
+    "footer footer footer footer footer footer footer footer footer footer footer footer"; */
+  }
+  /*.cards-conteiner{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+  }
   .poster{
-    max-width: 150px;
+    max-width: 120px;
+    margin-bottom: 10px;
+    grid-area: poster;
   }
   .poster>img{
     width: 100%;
@@ -454,57 +570,40 @@ body > img{
     object-position: center;
   }
   .movie{
-    max-width: 180px;
+    max-width: 170px;
     padding-top: auto;
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: "portada"
-    "sinopsis"
-    "listaMovie"; */
-  }
-
-  /* para mostrar cuarpo del grid por debajo del header fixed */
-  .sectionGrid{
-    margin-top: 132px; /* para mostrar cuarpo del grid por debajo del header fixed */
-    /* grid-template-rows: repeat(8, 45vh 1fr 1fr 1fr 1fr 1fr 1fr auto);
-    grid-template-areas:
-    "slide slide slide slide slide slide slide slide slide slide slide slide"
-    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
-    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
-    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
-    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
-    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
-    "cards cards cards cards cards cards cards cards cards sidebar sidebar sidebar"
-    /* "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar" */
-    /*"footer footer footer footer footer footer footer footer footer footer footer footer";
-  } */
-
-  /* .movie {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:"portada listaMovie"
-                        "sinopsis sinopsis";*/
-  }
-  .ppal{
-    display: flex;
     justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: (1 1fr);
+    grid-template-areas: "poster"
+    "listaMovie"
+    "sinopsis";
   }
-  
+
+  .sinop-parr{
+    grid-area: sinopsis;
+    width: 100%;
+  }
   .sinop-parr > p{
-    max-height: 90px;
+    max-height: 100px;
     overflow-y: scroll;
-    max-width: 120px;
+    max-width: 165px;
     font-size: .6em;
   }
-
+  .parr-der{
+    grid-area: listaMovie;
+  }
 
   .parr-der>ul {
-    max-height: 90px;
+    max-height: 100px;
     overflow-y: scroll;
-    max-width: 150px;
+    max-width: 160px;
     font-size: .6em;
     padding-bottom: 15px;
+  }
+  .parr-der>ul li{
+    max-width: 150px;
   }
   .parr-der>ul::-webkit-scrollbar,
   .sinop-parr>p::-webkit-scrollbar{
@@ -517,6 +616,6 @@ body > img{
     border-radius: 5px;
     background-color: var(--navbar-shallow-color);
   }
-
+*/
 
 }

@@ -81,11 +81,13 @@ let btnVerMas=document.querySelectorAll(".btn-vermas");
 for (let i = 0; i < btnVerMas.length; i++) {
   btnVerMas[i].addEventListener("click", function(e){
     let verParrafo = this.nextElementSibling;
-    verParrafo.classList.toggle("ver_menos");
-    if (verParrafo.classList.contains("ver_menos")){
-      this.innerHTML="ver mas";
-    } else {
+    verParrafo.classList.toggle("ver_contenido");
+    if (verParrafo.classList.contains("ver_contenido")){
       this.innerHTML="ver menos";
+      this.style.cssText ="bottom :5%; z-index: 2;"
+    } else {
+      this.innerHTML="ver mas";
+      this.style.bottom = "38%";
     };
   });
 }
